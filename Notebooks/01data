@@ -1,1 +1,20 @@
+import pandas as pd
 
+import warnings
+
+# 忽略所有警告訊息
+warnings.filterwarnings('ignore')
+
+# 設定顯示選項，確保能看到所有欄位 (避免出現 ...)
+pd.set_option('display.max_columns', None)
+pd.set_option ( 'display.max_columns ' , None )  
+
+# 1. 讀取資料
+df = pd.read_csv('../data/raw/YRBS_2007.csv')
+
+# 2. 列出所有欄位名稱與型態
+print(f"專案總欄位數：{df.shape[1]}")
+print("-" * 30)
+print("【所有欄位及其資料型態清單】")
+print(df.dtypes)
+print ( df.dtypes )
